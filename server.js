@@ -2,7 +2,10 @@
 var prerender = require('./lib');
 
 var server = prerender({
-  followRedirects: true
+  followRedirects: true,
+  pageLoadTimeout: 100000,
+  pageDoneCheckInterval: 5000,
+  logRequests: true
 });
 
 server.use(prerender.sendPrerenderHeader());
